@@ -31,7 +31,8 @@
   <!-- Nav Item - Pages Collapse Menu -->
   <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-      <i class="fas fa-fw fa-cog"></i>
+      <!-- <i class="fas fa-fw fa-cog"></i> -->
+      <i class="fas fa-fw fa-folder"></i>
       <span>আয়ের খাত</span>
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -52,9 +53,9 @@
   <li class="nav-item active">
     <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
       <i class="fas fa-fw fa-folder"></i>
-      <span> ব্যয়ের খাত</span>
+      <span>ব্যয়ের খাত</span>
     </a>
-    <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <a class="collapse-item" href="login.html">বেতন/ভাতা</a>
         <a class="collapse-item" href="register.html">দোকান/ঘর ভাড়া</a>
@@ -69,9 +70,9 @@
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">
 
-  <!-- Sidebar Toggler (Sidebar) -->
+  <!-- Sidebar Toggler (Sidebar)
   <div class="text-center d-none d-md-inline">
     <button class="rounded-circle border-0" id="sidebarToggle"></button>
-  </div>
+  </div> -->
 
 </ul>
