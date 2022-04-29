@@ -9,6 +9,6 @@ class AdminController extends Controller
 {
     public function index()
     {
-        echo 'this is admin';
+        return view('admin.dashboard');
     }
 }

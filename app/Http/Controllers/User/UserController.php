@@ -11,12 +11,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        // // $users = User::find(8)->contacts()->get();
-        // $users = User::userInof();
-        // return view('user', compact('users'));
-        $userName = Auth::user()->name;
-        echo "this is user {$userName}";
-        return view('admin.dashboard');
+        return view('user.dashboard');
     }
 
     /**
