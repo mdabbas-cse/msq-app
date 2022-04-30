@@ -19,6 +19,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // // Path to the project's root folder    
+    // echo base_path();
+    // echo '<br>';
+    // // Path to the 'app' folder    
+    // echo app_path();
+    // echo '<br>';
+    // // Path to the 'public' folder    
+    // echo public_path();
+    // echo '<br>';
+    // // Path to the 'storage' folder    
+    // echo storage_path();
+    // echo '<br>';
+    // // Path to the 'storage/app' folder    
+    // echo storage_path('app');
     return view('welcome');
 });
 Route::middleware(

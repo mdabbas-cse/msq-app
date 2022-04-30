@@ -116,17 +116,16 @@ class LoginController extends Controller
         ]);
 
         $mail_data = [
-            'recipient'=> 'ajobmanob12125@gmail.com',
+            'recipient' => 'ajobmanob12125@gmail.com',
             'token' => $token,
             'fromEmail' => $request->email,
             'subject' => 'Reset Password',
-            'body' => 'Reset Your Password'
         ];
 
 
         Mail::send('password-template', $mail_data, function ($message) use ($mail_data) {
-            $message->from($mail_data['fromEmail'], 'Reset Password');
-            $message->to($mail_data['recipient']);
+            $message->from($mail_data['recipient'], $mail_data['subject']);
+            $message->to($mail_data['fromEmail']);
             $message->subject($mail_data['subject']);
         });
 

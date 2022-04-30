@@ -24,6 +24,9 @@
                 <p class="mb-4">We get it, stuff happens. Just enter your email address below
                   and we'll send you a link to reset your password!</p>
               </div>
+              <div class="alert alert-success" role="alert">
+                uakdev
+              </div>
               <form class="user" method="POST" action="{{ route('forget.password.post') }}">
                 @csrf
                 <div class="form-group">
@@ -40,7 +43,7 @@
                 </button>
               </form>
               <hr>
-             
+
               <div class="text-center">
                 <a class="small" href="{{route('login')}}">Already have an account? Login!</a>
               </div>

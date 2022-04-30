@@ -5692,6 +5692,10 @@ a.badge-dark:focus {
   color: #18181c
 }
 
+.alert-rounded {
+  border-radius: 10rem;
+}
+
 @-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 1rem 0
@@ -10803,6 +10807,10 @@ a.text-warning:hover {
 
 .text-danger {
   color: #e74a3b !important
+}
+
+.custom-text-danger {
+  color: #f1a29b !important
 }
 
 a.text-danger:focus,
