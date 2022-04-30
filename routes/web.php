@@ -31,9 +31,12 @@ Route::middleware(
         Route::post('logout', [LoginController::class, 'logout'])->name('logout');
         Route::get('forget-password', [LoginController::class, 'showForgetPasswordForm'])->name('forget.password.get')->middleware('guest');
         Route::post('forget-password', [LoginController::class, 'submitForgetPasswordForm'])->name('forget.password.post')->middleware('guest');
-        Route::get('reset-password', function () {
+        Route::get('reset-password/{token}', function () {
             return view('resetPasswordForm');
         })->name('reset.password.get')->middleware('guest');
+        Route::get('templete', function () {
+            return view('password-template');
+        })->name('templete.get')->middleware('guest');
     }
 );
 

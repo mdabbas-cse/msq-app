@@ -114,11 +114,20 @@ class LoginController extends Controller
             'token' => $token,
             'created_at' => Carbon::now()
         ]);
-        $mail = New Mailer();
 
-        $mail->send('email.forgetPassword', ['token' => $token], function ($message) use ($request) {
-            $message->to($request->email);
-            $message->subject('Reset Password');
+        $mail_data = [
+            'recipient'=> 'ajobmanob12125@gmail.com',
+            'token' => $token,
+            'fromEmail' => $request->email,
+            'subject' => 'Reset Password',
+            'body' => 'Reset Your Password'
+        ];
+
+
+        Mail::send('password-template', $mail_data, function ($message) use ($mail_data) {
+            $message->from($mail_data['fromEmail'], 'Reset Password');
+            $message->to($mail_data['recipient']);
+            $message->subject($mail_data['subject']);
         });
 
         return back()->with('message', 'We have e-mailed your password reset link!');

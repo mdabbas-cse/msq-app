@@ -27,7 +27,7 @@
               <form class="user" method="POST" action="{{ route('forget.password.post') }}">
                 @csrf
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="email" aria-describedby="email" autofocus placeholder="Enter Email Address...">
+                  <input name="email" type="email" class="form-control form-control-user" id="email" aria-describedby="email" autofocus placeholder="Enter Email Address...">
                 </div>
                 <button type="submit" class="btn btn-primary btn-user btn-block">
                   Send Password Reset Link
