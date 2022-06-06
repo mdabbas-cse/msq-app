@@ -85,6 +85,9 @@
 
   @include('/layouts/js')
   @yield('scripts')
+  <!-- Custom scripts for all pages-->
+  <script src="{{asset('js/main.js')}}"></script>
+  @yield('custom_js')
 
 </body>
 

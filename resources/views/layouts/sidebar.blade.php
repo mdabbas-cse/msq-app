@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
   <!-- Sidebar - Brand -->
-  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.dashboard') }}">
     <div class="sidebar-brand-icon rotate-n-15">
       <i class="fas fa-laugh-wink"></i>
     </div>
@@ -20,7 +20,7 @@
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item">
-    <a class="nav-link" href="index.html">
+    <a class="nav-link" href="{{ route('admin.dashboard')}}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard</span></a>
   </li>
@@ -37,10 +37,10 @@
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="buttons.html">ব্যাংক</a>
+        <a class="collapse-item" href="{{ route('admin.bank.all') }}">ব্যাংক</a>
         <a class="collapse-item" href="cards.html">সরকারী/বেসরকারী</a>
         <a class="collapse-item" href="cards.html">দোকান/ঘর ভাড়া</a>
-        <a class="collapse-item" href="cards.html">জুমা/দান বাক্স/মাসিক বাজার কালেকশন/ আকদ</a>
+        <a class="collapse-item" href="cards.html">জুমা/দান বাক্স/মাসিক বাজার কালেকশন/আকদ</a>
         <a class="collapse-item" href="cards.html">মাসিক চাঁদা/ সদস্য চাঁদা/ অনুদান</a>
       </div>
     </div>
@@ -59,9 +59,8 @@
       <div class="bg-white py-2 collapse-inner rounded">
         <a class="collapse-item" href="login.html">বেতন/ভাতা</a>
         <a class="collapse-item" href="register.html">দোকান/ঘর ভাড়া</a>
-        <a class="collapse-item" href="forgot-password.html">চিকিৎসা</a>
         <a class="collapse-item" href="forgot-password.html">অনুদান</a>
-        <a class="collapse-item" href="forgot-password.html">অফিস খরচ/ওয়াকফ</a>
+        <a class="collapse-item" href="forgot-password.html">অফিস/ওয়াকফ/বিল/চিকিৎসা খরচ</a>
         <a class="collapse-item" href="forgot-password.html">বিল</a>
         <a class="collapse-item" href="forgot-password.html">ঋণ পরিশোধ</a>
       </div>

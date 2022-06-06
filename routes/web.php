@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BankController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
@@ -62,6 +63,14 @@ Route::group(
     ],
     function () {
         Route::get('dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+        // bank route
+        Route::get('bank-all', [BankController::class, 'all'])->name('admin.bank.all');
+        Route::get('bank-add', [BankController::class, 'create'])->name('admin.bank.create');
+        Route::post('bank-add', [BankController::class, 'store'])->name('admin.bank.store');
+        Route::get('bank-edit/{id}', [BankController::class, 'edit'])->name('admin.bank.edit');
+        Route::post('bank-edit/{id}', [BankController::class, 'update'])->name('admin.bank.update');
+        Route::get('bank-delete/{id}', [BankController::class, 'delete'])->name('admin.bank.delete');
+
     }
 );
 
