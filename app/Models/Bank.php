@@ -14,6 +14,8 @@ class Bank extends Model
         'check_no',
         'amount',
         'cost_status',
+        'description',
+        'issue_date'
     ];
 
     protected $appends = ['view_route', 'edit_route', 'delete_route'];
