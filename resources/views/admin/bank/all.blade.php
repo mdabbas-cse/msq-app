@@ -3,8 +3,8 @@
 @section('css')
     <style>
         /* .container-fluid {
-            background-color: red;
-        } */
+                        background-color: red;
+                    } */
     </style>
 @endsection
 
@@ -47,7 +47,7 @@
                             <td>{{ $bank->amount }}</td>
                             <td>{{ $bank->description }}</td>
                             <td>{{ $bank->issue_date }}</td>
-                            <td>{{ $bank->cost_status }}</td>
+                            <td> {{ $bank->cost_status == 1 ? 'Debit' : 'Cradit' }} </td>
                             <td class="text-center"><a href="{{ route('admin.bank.edit', ['id' => $bank->id]) }}"><i
                                         class="fas fa-fw fa-edit"></i></a></td>
                             <td class="text-center "><a onclick="confirm('Are your delete confirm?')"
