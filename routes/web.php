@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BankController;
+use App\Http\Controllers\Admin\GovmentNNonGovmentCollectionController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
@@ -63,13 +64,21 @@ Route::group(
   ],
   function () {
     Route::get('dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-    // bank route
+    // BANK ROUTE
     Route::get('bank-all', [BankController::class, 'all'])->name('admin.bank.all');
     Route::get('bank-add', [BankController::class, 'create'])->name('admin.bank.create');
     Route::post('bank-add', [BankController::class, 'store'])->name('admin.bank.store');
     Route::get('bank-edit/{id}', [BankController::class, 'edit'])->name('admin.bank.edit');
     Route::post('bank-edit/{id}', [BankController::class, 'update'])->name('admin.bank.update');
     Route::get('bank-delete/{id}', [BankController::class, 'delete'])->name('admin.bank.delete');
+
+    // GOV. NON-GOV ROUTE
+    Route::get('gov-nongov-all', [GovmentNNonGovmentCollectionController::class, 'all'])->name('admin.gngc.all');
+    Route::get('gov-nongov-add', [GovmentNNonGovmentCollectionController::class, 'create'])->name('admin.gngc.create');
+    Route::post('gov-nongov-store', [GovmentNNonGovmentCollectionController::class, 'store'])->name('admin.gngc.store');
+    Route::get('gov-nongov-edit/{id}', [GovmentNNonGovmentCollectionController::class, 'edit'])->name('admin.gngc.edit');
+    Route::post('gov-nongov-update/{id}', [GovmentNNonGovmentCollectionController::class, 'update'])->name('admin.gngc.update');
+    Route::get('gov-nongov-delete/{id}', [GovmentNNonGovmentCollectionController::class, 'delete'])->name('admin.gngc.delete');
   }
 );
 
