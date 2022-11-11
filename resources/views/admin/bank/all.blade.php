@@ -3,8 +3,8 @@
 @section('css')
     <style>
         /* .container-fluid {
-                        background-color: red;
-                    } */
+                            background-color: red;
+                        } */
     </style>
 @endsection
 
@@ -21,7 +21,7 @@
     <div class="card">
         <div class="card-body">
 
-            <table id="back-account" class="table table-bordered table-sm">
+            <table id="back-account" class="table table-bordered table-responsive-sm table-responsive-md">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

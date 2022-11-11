@@ -1,4 +1,13 @@
 @extends('layouts.appLayout')
+@section('css')
+    <style>
+        @media only screen and (min-width: 800px) {
+            #gngc_filter {
+                float: right !important;
+            }
+        }
+    </style>
+@endsection
 @section('content')
     <div class="d-flex justify-content-between">
         <h1 class="h5 mb-4 text-gray-800">GOV. NON-GOV. COLLECTION</h1>
@@ -8,7 +17,7 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <table id="back-account" class="table table-bordered table-sm">
+            <table id="gngc" class="table table-bordered table-responsive-sm table-responsive-md">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -45,7 +54,7 @@
 @section('custom_js')
     <script>
         $(document).ready(function() {
-            $('#back-account').DataTable();
+            $('#gngc').DataTable();
         });
     </script>
 @endsection

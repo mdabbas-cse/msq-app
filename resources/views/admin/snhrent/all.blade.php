@@ -1,4 +1,13 @@
 @extends('layouts.appLayout')
+@section('css')
+    <style>
+        @media only screen and (min-width: 800px) {
+            #snhrent_filter {
+                float: right !important;
+            }
+        }
+    </style>
+@endsection
 @section('content')
     <div class="d-flex justify-content-between">
         <h1 class="h5 mb-4 text-gray-800">SHOP & HOUSE RENT / ব্যাংক হিসাব</h1>
@@ -8,7 +17,7 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <table id="snhrent" class="table-responsive table-bordered">
+            <table id="snhrent" class="table table-bordered table-responsive-sm table-responsive-md">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
