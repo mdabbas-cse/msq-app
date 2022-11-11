@@ -1,17 +1,13 @@
 @extends('layouts.appLayout')
 @section('content')
     <div class="d-flex justify-content-between">
-
-
         <h1 class="h5 mb-4 text-gray-800">SHOP & HOUSE RENT / ব্যাংক হিসাব</h1>
         <div>
             <a class="btn btn-primary" href="{{ route('admin.snhrent.create') }}">ADD NEW / নতুন সংযুগ করুন</a>
         </div>
     </div>
-
     <div class="card">
         <div class="card-body">
-
             <table id="back-account" class="table table-bordered table-sm">
                 <thead>
                     <tr>
@@ -53,16 +49,14 @@
                         </tr>
                     @endforeach
                 </tbody>
-
             </table>
         </div>
     </div>
 @endsection
 
-@section('scr ipts')
+@section('scripts')
     @include('/layouts/dataTable')
 @endsection
-
 @section('custom_js')
     <script>
         $(document).ready(function() {
