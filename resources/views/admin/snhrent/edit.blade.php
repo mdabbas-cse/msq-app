@@ -15,7 +15,7 @@
                 @csrf
                 <input type="hidden" name="cost_status" value="{{ $coststatus }}">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="donar_name" class="form-label">Donar Name</label>
                             <input type="text" name="donar_name" class="form-control" id="donar_name"
@@ -25,7 +25,6 @@
                             @enderror
                         </div>
                     </div>
-
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="amount" class="form-label">Amount <span class="text-danger">*</span></label>
@@ -36,7 +35,8 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-md-6">
+
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="nid" class="form-label">NID</label>
                             <input type="text" name="nid" class="form-control" id="nid" placeholder="NID"
@@ -46,8 +46,7 @@
                             @enderror
                         </div>
                     </div>
-
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="mobile_no" class="form-label">Mobile No <span class="text-danger">*</span></label>
                             <input type="text" name="mobile_no" class="form-control" id="mobile_no"
@@ -57,7 +56,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="house_no" class="form-label">House No <span class="text-danger">*</span></label>
                             <input type="text" name="house_no" class="form-control" id="house_no" placeholder="House No"

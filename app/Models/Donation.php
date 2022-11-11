@@ -9,6 +9,17 @@ class Donation extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+      'month',
+      'amount',
+      'address',
+      'mobile_no',
+      'issue_date',
+      'donar_name',
+      'cost_status',
+      'description',
+    ];
+
     protected $appends = ['view_route', 'edit_route', 'delete_route'];
 
     public function setViewRouteAttribute()

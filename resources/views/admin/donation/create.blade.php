@@ -4,16 +4,16 @@
         <h1 class="h5 mb-4 text-gray-800">ADD NEW / নতুন সংযুগ করুন</h1>
         <div>
             <a class="btn btn-primary"
-                href="@if ($coststatus == 1) {{ route('admin.snhrent.all.debit') }}
+                href="@if ($coststatus == 1) {{ route('admin.donation.all.debit') }}
           @elseif($coststatus == 2)
-            {{ route('admin.snhrent.all.credit') }} @endif">BACK
+            {{ route('admin.donation.all.credit') }} @endif">BACK
                 / পেছনে যান</a>
         </div>
     </div>
 
     <div class="card">
         <div class="card-body">
-            <form method="POST" action="{{ route('admin.snhrent.store') }}">
+            <form method="POST" action="{{ route('admin.donation.store') }}">
                 @csrf
                 <input type="hidden" name="cost_status" value="{{ $coststatus }}">
                 <div class="row">
@@ -40,16 +40,6 @@
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="nid" class="form-label">NID</label>
-                            <input type="text" name="nid" class="form-control" id="nid" placeholder="NID"
-                                value="{{ old('nid') }}">
-                            @error('nid')
-                                <div id="nid" class="form-text text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
                             <label for="mobile_no" class="form-label">Mobile No <span class="text-danger">*</span></label>
                             <input type="text" name="mobile_no" class="form-control" id="mobile_no"
                                 placeholder="Mobile No" value="{{ old('mobile_no') }}">
@@ -58,34 +48,6 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="house_no" class="form-label">House No <span class="text-danger">*</span></label>
-                            <input type="text" name="house_no" class="form-control" id="house_no" placeholder="House No"
-                                value="{{ old('house_no') }}">
-                            @error('house_no')
-                                <div id="house_no" class="form-text text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="rent_category" class="form-label">Rent Category<span
-                                    class="text-danger">*</span></label>
-                            <select class="form-control" name="rent_category" id="rent_category">
-                                <option value="">Select Cost Status</option>
-                                <option value="shop" {{ old('rent_category') == 'shop' ? 'selected' : '' }}>Shop
-                                </option>
-                                <option value="house" {{ old('rent_category') == 'house' ? 'selected' : '' }}>House
-                                </option>
-                            </select>
-                            @error('rent_category')
-                                <div id="rent_category" class="form-text text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="month" class="form-label">Month <span class="text-danger">*</span></label>
@@ -110,7 +72,7 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="cost_status" class="form-label">Address</label>
+                            <label for="address" class="form-label">Address</label>
                             <textarea class="form-control" name="address" id="address" cols="30" rows="5">{{ old('address') }}</textarea>
                             @error('address')
                                 <div id="address" class="form-text text-danger">{{ $message }}</div>
@@ -119,7 +81,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="cost_status" class="form-label">Description</label>
+                            <label for="description" class="form-label">Description</label>
                             <textarea class="form-control" name="description" id="description" cols="30" rows="5">{{ old('description') }}</textarea>
                             @error('description')
                                 <div id="description" class="form-text text-danger">{{ $message }}</div>

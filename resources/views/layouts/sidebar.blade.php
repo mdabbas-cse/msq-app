@@ -42,7 +42,7 @@
                 <a class="collapse-item" href="{{ route('admin.gngc.all') }}">সরকারী/বেসরকারী</a>
                 <a class="collapse-item" href="{{ route('admin.snhrent.all.debit') }}">দোকান/ঘর ভাড়া</a>
                 <a class="collapse-item" href="cards.html">জুমা/দান বাক্স/মাসিক বাজার কালেকশন/আকদ</a>
-                <a class="collapse-item" href="cards.html">মাসিক চাঁদা/ সদস্য চাঁদা/ অনুদান</a>
+                <a class="collapse-item" href="{{ route('admin.donation.all.debit') }}">মাসিক চাঁদা/ সদস্য চাঁদা/ অনুদান</a>
             </div>
         </div>
     </li>
@@ -61,7 +61,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="login.html">বেতন/ভাতা</a>
                 <a class="collapse-item" href="{{ route('admin.snhrent.all.credit') }}">দোকান/ঘর ভাড়া</a>
-                <a class="collapse-item" href="forgot-password.html">অনুদান</a>
+                <a class="collapse-item" href="{{ route('admin.donation.all.credit') }}">অনুদান</a>
                 <a class="collapse-item" href="forgot-password.html">অফিস/ওয়াকফ/বিল/চিকিৎসা খরচ</a>
                 <a class="collapse-item" href="forgot-password.html">বিল</a>
                 <a class="collapse-item" href="forgot-password.html">ঋণ পরিশোধ</a>

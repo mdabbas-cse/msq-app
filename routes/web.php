@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BankController;
+use App\Http\Controllers\Admin\DonationController;
 use App\Http\Controllers\Admin\GovmentNNonGovmentCollectionController;
 use App\Http\Controllers\Admin\ShopNHouseRentController;
 use App\Http\Controllers\User\UserController;
@@ -73,11 +74,19 @@ Route::group(
     Route::post('bank-add', [BankController::class, 'store'])->name('admin.bank.store');
     Route::post('bank-edit/{id}', [BankController::class, 'update'])->name('admin.bank.update');
 
+    // DONATION ROUTE
+    Route::get('donation-all-debit', [DonationController::class, 'indexDebit'])->name('admin.donation.all.debit');
+    Route::get('donation-all-credit', [DonationController::class, 'indexCredit'])->name('admin.donation.all.credit');
+    Route::get('donation-add/{id}', [DonationController::class, 'create'])->name('admin.donation.create');
+    Route::post('donation-store', [DonationController::class, 'store'])->name('admin.donation.store');
+    Route::post('donation-update/{id}', [DonationController::class, 'update'])->name('admin.donation.update');
+    Route::get('donation-edit/{id}/{cost_status}', [DonationController::class, 'edit'])->name('admin.donation.edit');
+    Route::get('donation-delete/{id}/{cost_status}', [DonationController::class, 'delete'])->name('admin.donation.delete');
+
     // SHOP & HOUSE RENT ROUTE
     Route::get('snhrent-all-debit', [ShopNHouseRentController::class, 'indexDebit'])->name('admin.snhrent.all.debit');
     Route::get('snhrent-all-credit', [ShopNHouseRentController::class, 'indexCredit'])->name('admin.snhrent.all.credit');
-    Route::get('snhrent-add-debit/{id}', [ShopNHouseRentController::class, 'create'])->name('admin.snhrent.create.debit');
-    Route::get('snhrent-add-credit/{id}', [ShopNHouseRentController::class, 'create'])->name('admin.snhrent.create.credit');
+    Route::get('snhrent-add/{id}', [ShopNHouseRentController::class, 'create'])->name('admin.snhrent.create');
     Route::post('snhrent-store', [ShopNHouseRentController::class, 'store'])->name('admin.snhrent.store');
     Route::post('snhrent-update/{id}', [ShopNHouseRentController::class, 'update'])->name('admin.snhrent.update');
     Route::get('snhrent-edit/{id}/{cost_status}', [ShopNHouseRentController::class, 'edit'])->name('admin.snhrent.edit');

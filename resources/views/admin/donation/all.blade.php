@@ -2,7 +2,7 @@
 @section('css')
     <style>
         @media only screen and (min-width: 800px) {
-            #snhrent_filter {
+            #donation_filter {
                 float: right !important;
             }
         }
@@ -10,54 +10,55 @@
 @endsection
 @section('content')
     <div class="d-flex justify-content-between">
-        <h1 class="h5 mb-4 text-gray-800">SHOP & HOUSE RENT / দোকান/ঘর ভাড়া</h1>
+        <h1 class="h5 mb-4 text-gray-800">
+            @if ($create == 1)
+                ( MONTHLY / MEMBERSHIP ) SUBSCRIPTION / DONATION / মাসিক চাঁদা/ সদস্য চাঁদা/ অনুদান
+            @elseif($create == 2)
+                DONATION / অনুদান
+            @endif
+        </h1>
         <div>
             <a class="btn btn-primary"
-                href="@if ($create == 1) {{ route('admin.snhrent.create', 1) }}
+                href="@if ($create == 1) {{ route('admin.donation.create', 1) }}
                       @elseif($create == 2)
-                        {{ route('admin.snhrent.create', 2) }} @endif">ADD
+                        {{ route('admin.donation.create', 2) }} @endif">ADD
                 NEW / নতুন সংযুগ করুন</a>
         </div>
     </div>
     <div class="card">
         <div class="card-body">
-            <table id="snhrent" class="table table-bordered table-responsive-sm table-responsive-md">
+            <table id="donation" class="table table-bordered table-responsive-sm table-responsive-md">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Donar Name</th>
-                        <th scope="col">NID</th>
                         <th scope="col">Mobile No</th>
-                        <th scope="col">House No</th>
                         <th scope="col">Description</th>
                         <th scope="col">Address</th>
                         <th scope="col">Amout</th>
                         <th scope="col">Month</th>
                         <th scope="col">Issue Date</th>
-                        <th scope="col">Rent Category</th>
                         <th scope="col">Cost Status</th>
                         <th scope="col">Update</th>
                         <th scope="col">Delete</th>
                 </thead>
                 <tbody>
-                    @foreach ($snhrents as $snhrent)
+                    @foreach ($donations as $donation)
                         <tr>
-                            <td>{{ $snhrent->id }}</td>
-                            <td>{{ $snhrent->donar_name }}</td>
-                            <td>{{ $snhrent->nid }}</td>
-                            <td>{{ $snhrent->mobile_no }}</td>
-                            <td>{{ $snhrent->house_no }}</td>
-                            <td>{{ $snhrent->description }}</td>
-                            <td>{{ $snhrent->address }}</td>
-                            <td>{{ $snhrent->amount }}</td>
-                            <td>{{ $snhrent->month }}</td>
-                            <td>{{ $snhrent->issue_date }}</td>
-                            <td>{{ $snhrent->rent_category }}</td>
-                            <td> {{ $snhrent->cost_status == 1 ? 'Debit' : 'Cradit' }} </td>
-                            <td class="text-center"><a href="{{ route('admin.snhrent.edit', ['id' => $snhrent->id, 'cost_status' => $snhrent->cost_status]) }}"><i
+                            <td>{{ $donation->id }}</td>
+                            <td>{{ $donation->donar_name }}</td>
+                            <td>{{ $donation->mobile_no }}</td>
+                            <td>{{ $donation->description }}</td>
+                            <td>{{ $donation->address }}</td>
+                            <td>{{ $donation->amount }}</td>
+                            <td>{{ $donation->month }}</td>
+                            <td>{{ $donation->issue_date }}</td>
+                            <td> {{ $donation->cost_status == 1 ? 'Debit' : 'Cradit' }} </td>
+                            <td class="text-center"><a
+                                    href="{{ route('admin.donation.edit', ['id' => $donation->id, 'cost_status' => $donation->cost_status]) }}"><i
                                         class="fas fa-fw fa-edit"></i></a></td>
                             <td class="text-center "><a onclick="confirm('Are your delete confirm?')"
-                                    href="{{ route('admin.snhrent.delete', ['id' => $snhrent->id, 'cost_status' => $snhrent->cost_status]) }}"><i
+                                    href="{{ route('admin.donation.delete', ['id' => $donation->id, 'cost_status' => $donation->cost_status]) }}"><i
                                         class="fas fa-fw fa-trash text-danger"></i></a></td>
                         </tr>
                     @endforeach
@@ -73,7 +74,7 @@
 @section('custom_js')
     <script>
         $(document).ready(function() {
-            $('#snhrent').DataTable();
+            $('#donation').DataTable();
         });
     </script>
 @endsection

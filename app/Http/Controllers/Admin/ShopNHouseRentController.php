@@ -68,7 +68,7 @@ class ShopNHouseRentController extends Controller
   {
     $coststatus = $cost_status;
     $snhrent = ShopNHouseRent::find($id);
-    return view('admin.snhrent.edit', compact('snhrent','coststatus'));
+    return view('admin.snhrent.edit', compact('snhrent', 'coststatus'));
   }
 
   public function update(Request $request, $id)
@@ -76,7 +76,11 @@ class ShopNHouseRentController extends Controller
     $data = $request->all();
     $snhrent = ShopNHouseRent::find($id);
     $snhrent->update($data);
-    return redirect()->route('admin.snhrent.all');
+    if ($request->cost_status == 1) {
+      return redirect()->route('admin.snhrent.all.debit');
+    } elseif ($request->cost_status == 2) {
+      return redirect()->route('admin.snhrent.all.credit');
+    }
   }
 
   public function delete($id, $cost_status)
