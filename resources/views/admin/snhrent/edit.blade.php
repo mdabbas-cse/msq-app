@@ -3,7 +3,9 @@
     <div class="d-flex justify-content-between">
         <h1 class="h5 mb-4 text-gray-800">Add New / নতুন সংযুগ করুন</h1>
         <div>
-            <a class="btn btn-primary" href="{{ route('admin.snhrent.all') }}">Back/ পেছনে যান</a>
+            <a class="btn btn-primary" href="@if ($coststatus == 1) {{ route('admin.snhrent.all.debit') }}
+            @elseif($coststatus == 2)
+              {{ route('admin.snhrent.all.credit') }} @endif">Back/ পেছনে যান</a>
         </div>
     </div>
 
@@ -11,8 +13,9 @@
         <div class="card-body">
             <form method="post" action="{{ route('admin.snhrent.update', $snhrent->id) }}">
                 @csrf
+                <input type="hidden" name="cost_status" value="{{ $coststatus }}">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label for="donar_name" class="form-label">Donar Name</label>
                             <input type="text" name="donar_name" class="form-control" id="donar_name"
@@ -22,6 +25,7 @@
                             @enderror
                         </div>
                     </div>
+
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="amount" class="form-label">Amount <span class="text-danger">*</span></label>
@@ -32,8 +36,6 @@
                             @enderror
                         </div>
                     </div>
-
-
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="nid" class="form-label">NID</label>
@@ -44,6 +46,7 @@
                             @enderror
                         </div>
                     </div>
+
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="mobile_no" class="form-label">Mobile No <span class="text-danger">*</span></label>
@@ -54,9 +57,7 @@
                             @enderror
                         </div>
                     </div>
-
-
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="house_no" class="form-label">House No <span class="text-danger">*</span></label>
                             <input type="text" name="house_no" class="form-control" id="house_no" placeholder="House No"
@@ -77,8 +78,6 @@
                             @enderror
                         </div>
                     </div>
-
-
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="issue_date" class="form-label">Issue Date <span class="text-danger">*</span></label>
@@ -89,24 +88,7 @@
                             @enderror
                         </div>
                     </div>
-
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="cost_status" class="form-label">Cost Status <span
-                                    class="text-danger">*</span></label>
-                            <select class="form-control" name="cost_status" id="cost_status">
-                                <option value="">Select Cost Status</option>
-                                <option value="1" {{ $snhrent->cost_status == 1 ? 'selected' : '' }}>Debit</option>
-                                <option value="2" {{ $snhrent->cost_status == 2 ? 'selected' : '' }}>Cradit</option>
-                            </select>
-                            @error('cost_status')
-                                <div id="cost_status" class="form-text text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label for="rent_category" class="form-label">Rent Category<span
                                     class="text-danger">*</span></label>
@@ -122,7 +104,6 @@
                             @enderror
                         </div>
                     </div>
-
 
                     <div class="col-md-6">
                         <div class="form-group">

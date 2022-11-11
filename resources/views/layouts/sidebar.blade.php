@@ -40,7 +40,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('admin.bank.all') }}">ব্যাংক</a>
                 <a class="collapse-item" href="{{ route('admin.gngc.all') }}">সরকারী/বেসরকারী</a>
-                <a class="collapse-item" href="cards.html">দোকান/ঘর ভাড়া</a>
+                <a class="collapse-item" href="{{ route('admin.snhrent.all.debit') }}">দোকান/ঘর ভাড়া</a>
                 <a class="collapse-item" href="cards.html">জুমা/দান বাক্স/মাসিক বাজার কালেকশন/আকদ</a>
                 <a class="collapse-item" href="cards.html">মাসিক চাঁদা/ সদস্য চাঁদা/ অনুদান</a>
             </div>
@@ -60,7 +60,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="login.html">বেতন/ভাতা</a>
-                <a class="collapse-item" href="{{ route('admin.snhrent.all') }}">দোকান/ঘর ভাড়া</a>
+                <a class="collapse-item" href="{{ route('admin.snhrent.all.credit') }}">দোকান/ঘর ভাড়া</a>
                 <a class="collapse-item" href="forgot-password.html">অনুদান</a>
                 <a class="collapse-item" href="forgot-password.html">অফিস/ওয়াকফ/বিল/চিকিৎসা খরচ</a>
                 <a class="collapse-item" href="forgot-password.html">বিল</a>

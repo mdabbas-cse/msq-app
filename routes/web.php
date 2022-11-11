@@ -74,15 +74,14 @@ Route::group(
     Route::post('bank-edit/{id}', [BankController::class, 'update'])->name('admin.bank.update');
 
     // SHOP & HOUSE RENT ROUTE
-    Route::get('snhrent-all-debit', [ShopNHouseRentController::class, 'all'])->name('admin.snhrent.all.debit');
-    Route::get('snhrent-all-credit', [ShopNHouseRentController::class, 'all'])->name('admin.snhrent.all.credit');
-    Route::get('snhrent-add-debit', [ShopNHouseRentController::class, 'create'])->name('admin.snhrent.create.debit');
-    Route::get('snhrent-add-credit', [ShopNHouseRentController::class, 'create'])->name('admin.snhrent.create.credit');
-    Route::get('snhrent-edit/{id}/debit', [ShopNHouseRentController::class, 'edit'])->name('admin.snhrent.edit.debit');
-    Route::get('snhrent-edit/{id}/credit', [ShopNHouseRentController::class, 'edit'])->name('admin.snhrent.edit.credit');
-    Route::get('snhrent-delete/{id}', [ShopNHouseRentController::class, 'delete'])->name('admin.snhrent.delete');
+    Route::get('snhrent-all-debit', [ShopNHouseRentController::class, 'indexDebit'])->name('admin.snhrent.all.debit');
+    Route::get('snhrent-all-credit', [ShopNHouseRentController::class, 'indexCredit'])->name('admin.snhrent.all.credit');
+    Route::get('snhrent-add-debit/{id}', [ShopNHouseRentController::class, 'create'])->name('admin.snhrent.create.debit');
+    Route::get('snhrent-add-credit/{id}', [ShopNHouseRentController::class, 'create'])->name('admin.snhrent.create.credit');
     Route::post('snhrent-store', [ShopNHouseRentController::class, 'store'])->name('admin.snhrent.store');
     Route::post('snhrent-update/{id}', [ShopNHouseRentController::class, 'update'])->name('admin.snhrent.update');
+    Route::get('snhrent-edit/{id}/{cost_status}', [ShopNHouseRentController::class, 'edit'])->name('admin.snhrent.edit');
+    Route::get('snhrent-delete/{id}/{cost_status}', [ShopNHouseRentController::class, 'delete'])->name('admin.snhrent.delete');
 
     // GOV. NON-GOV ROUTE
     Route::get('gov-nongov-all', [GovmentNNonGovmentCollectionController::class, 'all'])->name('admin.gngc.all');

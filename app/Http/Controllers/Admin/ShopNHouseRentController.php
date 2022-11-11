@@ -9,19 +9,28 @@ use App\Http\Controllers\Controller;
 
 class ShopNHouseRentController extends Controller
 {
-  public function all()
+  public function indexDebit()
   {
-    $data = ShopNHouseRent::all();
-    return view('admin.snhrent.all', ['snhrents' => $data]);
+    $create = 1;
+    $data = ShopNHouseRent::where('cost_status', 1)->get();
+    return view('admin.snhrent.all', ['snhrents' => $data, 'create' => $create]);
+  }
+  public function indexCredit()
+  {
+    $create = 2;
+    $data = ShopNHouseRent::where('cost_status', 2)->get();
+    return view('admin.snhrent.all', ['snhrents' => $data, 'create' => $create]);
   }
 
-  public function create()
+  public function create($id)
   {
-    return view('admin.snhrent.create');
+    $coststatus = $id;
+    return view('admin.snhrent.create', compact('coststatus'));
   }
 
   public function store(Request $request)
   {
+    // dd($request);
     $request->validate([
       'nid' => 'required',
       'month' => 'required',
@@ -48,13 +57,18 @@ class ShopNHouseRentController extends Controller
 
     ];
     $snhrent = ShopNHouseRent::create($data);
-    return redirect()->route('admin.snhrent.all');
+    if ($request->cost_status == 1) {
+      return redirect()->route('admin.snhrent.all.debit');
+    } elseif ($request->cost_status == 2) {
+      return redirect()->route('admin.snhrent.all.credit');
+    }
   }
 
-  public function edit($id)
+  public function edit($id, $cost_status)
   {
+    $coststatus = $cost_status;
     $snhrent = ShopNHouseRent::find($id);
-    return view('admin.snhrent.edit', compact('snhrent'));
+    return view('admin.snhrent.edit', compact('snhrent','coststatus'));
   }
 
   public function update(Request $request, $id)
@@ -65,10 +79,14 @@ class ShopNHouseRentController extends Controller
     return redirect()->route('admin.snhrent.all');
   }
 
-  public function delete($id)
+  public function delete($id, $cost_status)
   {
     $snhrent = ShopNHouseRent::find($id);
     $snhrent->delete();
-    return redirect()->route('admin.snhrent.all');
+    if ($cost_status == 1) {
+      return redirect()->route('admin.snhrent.all.debit');
+    } elseif ($cost_status == 2) {
+      return redirect()->route('admin.snhrent.all.credit');
+    }
   }
 }

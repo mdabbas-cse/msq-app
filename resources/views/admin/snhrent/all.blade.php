@@ -10,9 +10,13 @@
 @endsection
 @section('content')
     <div class="d-flex justify-content-between">
-        <h1 class="h5 mb-4 text-gray-800">SHOP & HOUSE RENT / ব্যাংক হিসাব</h1>
+        <h1 class="h5 mb-4 text-gray-800">SHOP & HOUSE RENT</h1>
         <div>
-            <a class="btn btn-primary" href="{{ route('admin.snhrent.create') }}">ADD NEW / নতুন সংযুগ করুন</a>
+            <a class="btn btn-primary"
+                href="@if ($create == 1) {{ route('admin.snhrent.create.debit', 1) }}
+                      @elseif($create == 2)
+                        {{ route('admin.snhrent.create.credit', 2) }} @endif">ADD
+                NEW / নতুন সংযুগ করুন</a>
         </div>
     </div>
     <div class="card">
@@ -50,10 +54,10 @@
                             <td>{{ $snhrent->issue_date }}</td>
                             <td>{{ $snhrent->rent_category }}</td>
                             <td> {{ $snhrent->cost_status == 1 ? 'Debit' : 'Cradit' }} </td>
-                            <td class="text-center"><a href="{{ route('admin.snhrent.edit', ['id' => $snhrent->id]) }}"><i
+                            <td class="text-center"><a href="{{ route('admin.snhrent.edit', ['id' => $snhrent->id, 'cost_status' => $snhrent->cost_status]) }}"><i
                                         class="fas fa-fw fa-edit"></i></a></td>
                             <td class="text-center "><a onclick="confirm('Are your delete confirm?')"
-                                    href="{{ route('admin.snhrent.delete', ['id' => $snhrent->id]) }}"><i
+                                    href="{{ route('admin.snhrent.delete', ['id' => $snhrent->id, 'cost_status' => $snhrent->cost_status]) }}"><i
                                         class="fas fa-fw fa-trash text-danger"></i></a></td>
                         </tr>
                     @endforeach
