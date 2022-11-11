@@ -60,7 +60,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="login.html">বেতন/ভাতা</a>
-                <a class="collapse-item" href="register.html">দোকান/ঘর ভাড়া</a>
+                <a class="collapse-item" href="{{ route('admin.snhrent.all') }}">দোকান/ঘর ভাড়া</a>
                 <a class="collapse-item" href="forgot-password.html">অনুদান</a>
                 <a class="collapse-item" href="forgot-password.html">অফিস/ওয়াকফ/বিল/চিকিৎসা খরচ</a>
                 <a class="collapse-item" href="forgot-password.html">বিল</a>

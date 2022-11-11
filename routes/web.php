@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BankController;
 use App\Http\Controllers\Admin\GovmentNNonGovmentCollectionController;
+use App\Http\Controllers\Admin\ShopNHouseRentController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
@@ -72,13 +73,21 @@ Route::group(
     Route::post('bank-edit/{id}', [BankController::class, 'update'])->name('admin.bank.update');
     Route::get('bank-delete/{id}', [BankController::class, 'delete'])->name('admin.bank.delete');
 
+    // SHOP & HOUSE RENT ROUTE
+    Route::get('snhrent-all', [ShopNHouseRentController::class, 'all'])->name('admin.snhrent.all');
+    Route::get('snhrent-add', [ShopNHouseRentController::class, 'create'])->name('admin.snhrent.create');
+    Route::post('snhrent-store', [ShopNHouseRentController::class, 'store'])->name('admin.snhrent.store');
+    Route::get('snhrent-edit/{id}', [ShopNHouseRentController::class, 'edit'])->name('admin.snhrent.edit');
+    Route::get('snhrent-delete/{id}', [ShopNHouseRentController::class, 'delete'])->name('admin.snhrent.delete');
+    Route::post('snhrent-update/{id}', [ShopNHouseRentController::class, 'update'])->name('admin.snhrent.update');
+
     // GOV. NON-GOV ROUTE
     Route::get('gov-nongov-all', [GovmentNNonGovmentCollectionController::class, 'all'])->name('admin.gngc.all');
     Route::get('gov-nongov-add', [GovmentNNonGovmentCollectionController::class, 'create'])->name('admin.gngc.create');
     Route::post('gov-nongov-store', [GovmentNNonGovmentCollectionController::class, 'store'])->name('admin.gngc.store');
     Route::get('gov-nongov-edit/{id}', [GovmentNNonGovmentCollectionController::class, 'edit'])->name('admin.gngc.edit');
-    Route::post('gov-nongov-update/{id}', [GovmentNNonGovmentCollectionController::class, 'update'])->name('admin.gngc.update');
     Route::get('gov-nongov-delete/{id}', [GovmentNNonGovmentCollectionController::class, 'delete'])->name('admin.gngc.delete');
+    Route::post('gov-nongov-update/{id}', [GovmentNNonGovmentCollectionController::class, 'update'])->name('admin.gngc.update');
   }
 );
 

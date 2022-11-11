@@ -1,13 +1,4 @@
 @extends('layouts.appLayout')
-
-@section('css')
-    <style>
-        /* .container-fluid {
-                        background-color: red;
-                    } */
-    </style>
-@endsection
-
 @section('content')
     <div class="d-flex justify-content-between">
 

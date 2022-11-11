@@ -12,7 +12,6 @@ class GovmentNNonGovmentCollectionController extends Controller
   public function all()
   {
     $data = GovmentNNonGovmentCollection::all();
-    // dd($data);
     return view('admin.gngc.all', ['gngcs' => $data]);
   }
 
