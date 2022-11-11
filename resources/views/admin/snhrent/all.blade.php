@@ -8,7 +8,7 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <table id="back-account" class="table table-bordered table-sm">
+            <table id="snhrent" class="table-responsive table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -60,7 +60,7 @@
 @section('custom_js')
     <script>
         $(document).ready(function() {
-            $('#back-account').DataTable();
+            $('#snhrent').DataTable();
         });
     </script>
 @endsection
