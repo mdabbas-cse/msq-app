@@ -12,7 +12,7 @@
     <div class="d-flex justify-content-between">
         <h1 class="h5 mb-4 text-gray-800">
             @if ($create == 2)
-            &#91;JUMA/DONATION BOX/MONTHLY BAZAAR COLLECTION/AKHD&#93; &#91;জুমা/দান বাক্স/মাসিক বাজার কালেকশন/আকদ &#93;
+                &#91;JUMA/DONATION BOX/MONTHLY BAZAAR COLLECTION/AKHD&#93; &#91;জুমা/দান বাক্স/মাসিক বাজার কালেকশন/আকদ &#93;
             @elseif($create == 1)
                 DEBIT
             @endif
@@ -44,7 +44,17 @@
                     @foreach ($collections as $collection)
                         <tr>
                             <td>{{ $collection->id }}</td>
-                            <td>{{ $collection->collection_category }}</td>
+                            <td>
+                                @if ($collection->collection_category == 'jumma')
+                                    Jumma
+                                @elseif ($collection->collection_category == 'dan_box')
+                                    Dan Box
+                                @elseif ($collection->collection_category == 'mashik_bazar_collection')
+                                    Mashik Bazar Collection
+                                @elseif ($collection->collection_category == 'akdh')
+                                    Akdh
+                                @endif
+                            </td>
                             <td>{{ $collection->description }}</td>
                             <td>{{ $collection->amount }}</td>
                             <td>{{ $collection->month }}</td>

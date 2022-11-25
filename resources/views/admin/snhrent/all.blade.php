@@ -52,9 +52,16 @@
                             <td>{{ $snhrent->amount }}</td>
                             <td>{{ $snhrent->month }}</td>
                             <td>{{ $snhrent->issue_date }}</td>
-                            <td>{{ $snhrent->rent_category }}</td>
+                            <td>
+                                @if ($snhrent->rent_category == 'shop')
+                                    Shop
+                                @elseif ($snhrent->rent_category == 'house')
+                                    House
+                                @endif
+                            </td>
                             <td> {{ $snhrent->cost_status == 1 ? 'Debit' : 'Cradit' }} </td>
-                            <td class="text-center"><a href="{{ route('admin.snhrent.edit', ['id' => $snhrent->id, 'cost_status' => $snhrent->cost_status]) }}"><i
+                            <td class="text-center"><a
+                                    href="{{ route('admin.snhrent.edit', ['id' => $snhrent->id, 'cost_status' => $snhrent->cost_status]) }}"><i
                                         class="fas fa-fw fa-edit"></i></a></td>
                             <td class="text-center "><a onclick="confirm('Are your delete confirm?')"
                                     href="{{ route('admin.snhrent.delete', ['id' => $snhrent->id, 'cost_status' => $snhrent->cost_status]) }}"><i

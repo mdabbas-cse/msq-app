@@ -29,8 +29,7 @@
                                     Box
                                 </option>
                                 <option value="mashik_bazar_collection"
-                                    {{ old('collection_category') == 'mashik_bazar_collection' ? 'selected' : '' }}>mashik
-                                    bazar collection
+                                    {{ old('collection_category') == 'mashik_bazar_collection' ? 'selected' : '' }}>Mashik Bazar Collection
                                 </option>
                                 <option value="akdh" {{ old('collection_category') == 'akdh' ? 'selected' : '' }}>Akdh
                                 </option>
