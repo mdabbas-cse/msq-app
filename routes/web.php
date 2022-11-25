@@ -1,17 +1,18 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\BankController;
-use App\Http\Controllers\Admin\CollectionController;
-use App\Http\Controllers\Admin\DonationController;
-use App\Http\Controllers\Admin\GovmentNNonGovmentCollectionController;
-use App\Http\Controllers\Admin\SalaryController;
-use App\Http\Controllers\Admin\ShopNHouseRentController;
-use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Admin\BankController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\SalaryController;
+use App\Http\Controllers\Admin\DonationController;
+use App\Http\Controllers\Admin\SalaryCategoryController;
+use App\Http\Controllers\Admin\CollectionController;
+use App\Http\Controllers\Admin\ShopNHouseRentController;
+use App\Http\Controllers\Admin\GovmentNNonGovmentCollectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -110,6 +111,14 @@ Route::group(
     Route::get('gov-nongov-delete/{id}', [GovmentNNonGovmentCollectionController::class, 'delete'])->name('admin.gngc.delete');
     Route::post('gov-nongov-store', [GovmentNNonGovmentCollectionController::class, 'store'])->name('admin.gngc.store');
     Route::post('gov-nongov-update/{id}', [GovmentNNonGovmentCollectionController::class, 'update'])->name('admin.gngc.update');
+
+    // GOV. NON-GOV ROUTE
+    Route::get('salary-cat-all', [SalaryCategoryController::class, 'all'])->name('admin.salcat.all');
+    Route::get('salary-cat-add', [SalaryCategoryController::class, 'create'])->name('admin.salcat.create');
+    Route::get('salary-cat-edit/{id}', [SalaryCategoryController::class, 'edit'])->name('admin.salcat.edit');
+    Route::get('salary-cat-delete/{id}', [SalaryCategoryController::class, 'delete'])->name('admin.salcat.delete');
+    Route::post('salary-cat-store', [SalaryCategoryController::class, 'store'])->name('admin.salcat.store');
+    Route::post('salary-cat-update/{id}', [SalaryCategoryController::class, 'update'])->name('admin.salcat.update');
 
     // SALARY ROUTE
     Route::get('salary-all-debit', [SalaryController::class, 'indexDebit'])->name('admin.salary.all.debit');
