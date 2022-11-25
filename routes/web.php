@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BankController;
+use App\Http\Controllers\Admin\CollectionController;
 use App\Http\Controllers\Admin\DonationController;
 use App\Http\Controllers\Admin\GovmentNNonGovmentCollectionController;
 use App\Http\Controllers\Admin\ShopNHouseRentController;
@@ -73,6 +74,15 @@ Route::group(
     Route::get('bank-delete/{id}', [BankController::class, 'delete'])->name('admin.bank.delete');
     Route::post('bank-add', [BankController::class, 'store'])->name('admin.bank.store');
     Route::post('bank-edit/{id}', [BankController::class, 'update'])->name('admin.bank.update');
+
+    // DONATION ROUTE
+    Route::get('collection-all-debit', [CollectionController::class, 'indexDebit'])->name('admin.collection.all.debit');
+    Route::get('collection-all-credit', [CollectionController::class, 'indexCredit'])->name('admin.collection.all.credit');
+    Route::get('collection-add/{id}', [CollectionController::class, 'create'])->name('admin.collection.create');
+    Route::post('collection-store', [CollectionController::class, 'store'])->name('admin.collection.store');
+    Route::post('collection-update/{id}', [CollectionController::class, 'update'])->name('admin.collection.update');
+    Route::get('collection-edit/{id}/{cost_status}', [CollectionController::class, 'edit'])->name('admin.collection.edit');
+    Route::get('collection-delete/{id}/{cost_status}', [CollectionController::class, 'delete'])->name('admin.collection.delete');
 
     // DONATION ROUTE
     Route::get('donation-all-debit', [DonationController::class, 'indexDebit'])->name('admin.donation.all.debit');

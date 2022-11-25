@@ -74,7 +74,7 @@
                             <label for="rent_category" class="form-label">Rent Category<span
                                     class="text-danger">*</span></label>
                             <select class="form-control" name="rent_category" id="rent_category">
-                                <option value="">Select Cost Status</option>
+                                <option value="">Select Rent Category</option>
                                 <option value="shop" {{ old('rent_category') == 'shop' ? 'selected' : '' }}>Shop
                                 </option>
                                 <option value="house" {{ old('rent_category') == 'house' ? 'selected' : '' }}>House

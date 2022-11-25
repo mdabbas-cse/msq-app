@@ -9,6 +9,14 @@ class Collection extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+      'month',
+      'amount',
+      'issue_date',
+      'description',
+      'cost_status',
+      'collection_category',
+    ];
 
     protected $appends = ['view_route', 'edit_route', 'delete_route'];
 

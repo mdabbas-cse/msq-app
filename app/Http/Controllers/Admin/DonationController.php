@@ -32,12 +32,12 @@ class DonationController extends Controller
   {
     // dd($request);
     $request->validate([
-      'month' => 'required',
-      'amount' => 'required',
-      'mobile_no' => 'required',
-      'issue_date' => 'required',
+      'month' => 'required|date',
       'description' => 'required',
-      'cost_status' => 'required',
+      'amount' => 'required|numeric',
+      'issue_date' => 'required|date',
+      'mobile_no' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+      'cost_status' => 'required|integer',
     ]);
     $data = [
       'amount' => $request->amount,
@@ -67,6 +67,14 @@ class DonationController extends Controller
 
   public function update(Request $request, $id)
   {
+    $request->validate([
+      'month' => 'required|date',
+      'description' => 'required',
+      'amount' => 'required|numeric',
+      'issue_date' => 'required|date',
+      'mobile_no' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+      'cost_status' => 'required',
+    ]);
     $data = $request->all();
     $donation = Donation::find($id);
     $donation->update($data);
