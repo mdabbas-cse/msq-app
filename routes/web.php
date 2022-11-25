@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\BankController;
 use App\Http\Controllers\Admin\CollectionController;
 use App\Http\Controllers\Admin\DonationController;
 use App\Http\Controllers\Admin\GovmentNNonGovmentCollectionController;
+use App\Http\Controllers\Admin\SalaryController;
 use App\Http\Controllers\Admin\ShopNHouseRentController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Auth\LoginController;
@@ -75,7 +76,7 @@ Route::group(
     Route::post('bank-add', [BankController::class, 'store'])->name('admin.bank.store');
     Route::post('bank-edit/{id}', [BankController::class, 'update'])->name('admin.bank.update');
 
-    // DONATION ROUTE
+    // COLLECTION ROUTE
     Route::get('collection-all-debit', [CollectionController::class, 'indexDebit'])->name('admin.collection.all.debit');
     Route::get('collection-all-credit', [CollectionController::class, 'indexCredit'])->name('admin.collection.all.credit');
     Route::get('collection-add/{id}', [CollectionController::class, 'create'])->name('admin.collection.create');
@@ -109,6 +110,15 @@ Route::group(
     Route::get('gov-nongov-delete/{id}', [GovmentNNonGovmentCollectionController::class, 'delete'])->name('admin.gngc.delete');
     Route::post('gov-nongov-store', [GovmentNNonGovmentCollectionController::class, 'store'])->name('admin.gngc.store');
     Route::post('gov-nongov-update/{id}', [GovmentNNonGovmentCollectionController::class, 'update'])->name('admin.gngc.update');
+
+    // SALARY ROUTE
+    Route::get('salary-all-debit', [SalaryController::class, 'indexDebit'])->name('admin.salary.all.debit');
+    Route::get('salary-all-credit', [SalaryController::class, 'indexCredit'])->name('admin.salary.all.credit');
+    Route::get('salary-add/{id}', [SalaryController::class, 'create'])->name('admin.salary.create');
+    Route::post('salary-store', [SalaryController::class, 'store'])->name('admin.salary.store');
+    Route::post('salary-update/{id}', [SalaryController::class, 'update'])->name('admin.salary.update');
+    Route::get('salary-edit/{id}/{cost_status}', [SalaryController::class, 'edit'])->name('admin.salary.edit');
+    Route::get('salary-delete/{id}/{cost_status}', [SalaryController::class, 'delete'])->name('admin.salary.delete');
   }
 );
 

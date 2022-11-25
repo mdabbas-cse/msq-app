@@ -23,10 +23,15 @@
                                     class="text-danger">*</span></label>
                             <select class="form-control" name="collection_category" id="collection_category">
                                 <option value="">Select Collection Category</option>
-                                <option value="jumma" {{ $collection->collection_category == 'jumma' ? 'selected' : '' }}>Jumma</option>
-                                <option value="dan_box" {{ $collection->collection_category == 'dan_box' ? 'selected' : '' }}>Dan Box</option>
-                                <option value="mashik_bazar_collection" {{ $collection->collection_category == 'mashik_bazar_collection' ? 'selected' : '' }}>Mashik Bazar Collection</option>
-                                <option value="akdh" {{ $collection->collection_category == 'akdh' ? 'selected' : '' }}>Akdh</option>
+                                <option value="jumma" {{ $collection->collection_category == 'jumma' ? 'selected' : '' }}>
+                                    Jumma</option>
+                                <option value="dan_box"
+                                    {{ $collection->collection_category == 'dan_box' ? 'selected' : '' }}>Dan Box</option>
+                                <option value="mashik_bazar_collection"
+                                    {{ $collection->collection_category == 'mashik_bazar_collection' ? 'selected' : '' }}>
+                                    Mashik Bazar Collection</option>
+                                <option value="akdh" {{ $collection->collection_category == 'akdh' ? 'selected' : '' }}>
+                                    Akdh</option>
                             </select>
                             @error('collection_category')
                                 <div id="collection_category" class="form-text text-danger">{{ $message }}</div>
