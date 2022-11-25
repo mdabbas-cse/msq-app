@@ -124,4 +124,6 @@ Route::group(
 );
 
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home',function () {
+  return redirect(url('dashboard'));
+})->name('home');
