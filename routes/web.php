@@ -125,5 +125,5 @@ Route::group(
 
 
 Route::get('/home',function () {
-  return redirect(url('dashboard'));
+  return redirect(route('admin.dashboard'));
 })->name('home');
