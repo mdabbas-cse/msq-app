@@ -38,7 +38,6 @@ class SalaryController extends Controller
     $request->validate([
       'month' => 'required|date',
       'cost_status' => 'required',
-      'description' => 'required',
       'amount' => 'required|numeric',
       'issue_date' => 'required|date',
       'salary_category_id' => 'required',
@@ -73,7 +72,6 @@ class SalaryController extends Controller
     $request->validate([
       'month' => 'required|date',
       'cost_status' => 'required',
-      'description' => 'required',
       'amount' => 'required|numeric',
       'issue_date' => 'required|date',
       'salary_category_id' => 'required',

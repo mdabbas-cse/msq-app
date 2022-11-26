@@ -38,7 +38,6 @@ class ShopNHouseRentController extends Controller
       'house_no' => 'required|numeric',
       'mobile_no' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
       'issue_date' => 'required|date',
-      'description' => 'required',
       'cost_status' => 'required',
       'rent_category' => 'required',
     ]);
@@ -80,7 +79,6 @@ class ShopNHouseRentController extends Controller
       'house_no' => 'required|numeric',
       'mobile_no' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
       'issue_date' => 'required|date',
-      'description' => 'required',
       'cost_status' => 'required',
       'rent_category' => 'required',
     ]);
