@@ -2,7 +2,8 @@
 @section('css')
     <style>
         @media only screen and (min-width: 800px) {
-            #donation_filter {
+            #collection_filter,
+            #collection_paginate {
                 float: right !important;
             }
         }

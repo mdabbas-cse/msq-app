@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class MiscellaneousCostCategoies extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+      'category_name',
+    ];
 }

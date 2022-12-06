@@ -3,8 +3,8 @@
     <style>
         @media only screen and (min-width: 800px) {
 
-            #salcat_filter,
-            #salcat_paginate {
+            #miscat_filter,
+            #miscat_paginate {
                 float: right !important;
             }
         }
@@ -12,14 +12,14 @@
 @endsection
 @section('content')
     <div class="d-flex justify-content-between">
-        <h1 class="h5 mb-4 text-gray-800">সেলারি ক্যাটাগরি</h1>
+        <h1 class="h5 mb-4 text-gray-800">বিবিধ খরচ ক্যাটাগরি / Miscellaneous costs category</h1>
         <div>
-            <a class="btn btn-primary" href="{{ route('admin.salcat.create') }}">ADD NEW / নতুন সংযুগ করুন</a>
+            <a class="btn btn-primary" href="{{ route('admin.miscat.create') }}">ADD NEW / নতুন সংযুগ করুন</a>
         </div>
     </div>
     <div class="card">
         <div class="card-body">
-            <table id="salcat" class="table table-bordered table-responsive-sm table-responsive-md">
+            <table id="miscat" class="table table-bordered table-responsive-sm table-responsive-md">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -27,12 +27,12 @@
                         <th scope="col">Update</th>
                 </thead>
                 <tbody>
-                    @foreach ($salcats as $salcat)
+                    @foreach ($miscats as $miscat)
                         <tr>
-                            <td>{{ $salcat->id }}</td>
-                            <td>{{ $salcat->salary_category_name }}</td>
+                            <td>{{ $miscat->id }}</td>
+                            <td>{{ $miscat->category_name }}</td>
                             <td class="text-center">
-                                <a href="{{ route('admin.salcat.edit', ['id' => $salcat->id]) }}">
+                                <a href="{{ route('admin.miscat.edit', ['id' => $miscat->id]) }}">
                                     <i class="fas fa-fw fa-edit"></i>
                                 </a>
                             </td>
@@ -49,7 +49,7 @@
 @section('custom_js')
     <script>
         $(document).ready(function() {
-            $('#salcat').DataTable();
+            $('#miscat').DataTable();
         });
     </script>
 @endsection

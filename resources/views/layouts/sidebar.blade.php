@@ -39,6 +39,7 @@
         <div id="collapseCat" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('admin.salcat.all') }}">সেলারি ক্যাটাগরি</a>
+                <a class="collapse-item" href="{{ route('admin.miscat.all') }}">বিবিধ খরচ ক্যাটাগরি</a>
             </div>
         </div>
     </li>
@@ -81,9 +82,9 @@
                 <a class="collapse-item" href="{{ route('admin.salary.all.debit') }}">বেতন/ভাতা</a>
                 <a class="collapse-item" href="{{ route('admin.snhrent.all.debit') }}">দোকান/ঘর ভাড়া</a>
                 <a class="collapse-item" href="{{ route('admin.donation.all.debit') }}">অনুদান</a>
-                <a class="collapse-item" href="#">অফিস/ওয়াকফ/বিল/চিকিৎসা খরচ</a>
-                <a class="collapse-item" href="#">বিল</a>
-                <a class="collapse-item" href="#">ঋণ পরিশোধ</a>
+                <a class="collapse-item" href="{{ route('admin.miscost.all.owbm') }}">অফিস/ওয়াকফ/চিকিৎসা খরচ</a>
+                <a class="collapse-item" href="{{ route('admin.miscost.all.bill') }}">বিল</a>
+                <a class="collapse-item" href="{{ route('admin.miscost.all.debtpay') }}">ঋণ পরিশোধ</a>
             </div>
         </div>
     </li>

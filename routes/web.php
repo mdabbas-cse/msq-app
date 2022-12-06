@@ -9,10 +9,12 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\SalaryController;
 use App\Http\Controllers\Admin\DonationController;
-use App\Http\Controllers\Admin\SalaryCategoryController;
 use App\Http\Controllers\Admin\CollectionController;
+use App\Http\Controllers\Admin\SalaryCategoryController;
 use App\Http\Controllers\Admin\ShopNHouseRentController;
+use App\Http\Controllers\Admin\MiscellaneousCostCategoiesController;
 use App\Http\Controllers\Admin\GovmentNNonGovmentCollectionController;
+use App\Http\Controllers\Admin\MiscellaneousCostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,7 +114,7 @@ Route::group(
     Route::post('gov-nongov-store', [GovmentNNonGovmentCollectionController::class, 'store'])->name('admin.gngc.store');
     Route::post('gov-nongov-update/{id}', [GovmentNNonGovmentCollectionController::class, 'update'])->name('admin.gngc.update');
 
-    // GOV. NON-GOV ROUTE
+    // SALARY CATEGORY ROUTE
     Route::get('salary-cat-all', [SalaryCategoryController::class, 'all'])->name('admin.salcat.all');
     Route::get('salary-cat-add', [SalaryCategoryController::class, 'create'])->name('admin.salcat.create');
     Route::get('salary-cat-edit/{id}', [SalaryCategoryController::class, 'edit'])->name('admin.salcat.edit');
@@ -128,6 +130,25 @@ Route::group(
     Route::post('salary-update/{id}', [SalaryController::class, 'update'])->name('admin.salary.update');
     Route::get('salary-edit/{id}/{cost_status}', [SalaryController::class, 'edit'])->name('admin.salary.edit');
     Route::get('salary-delete/{id}/{cost_status}', [SalaryController::class, 'delete'])->name('admin.salary.delete');
+
+    // MISCELLANEOUS COSTS CATEGORY ROUTE
+    Route::get('miscost-cat-all', [MiscellaneousCostCategoiesController::class, 'all'])->name('admin.miscat.all');
+    Route::get('miscost-cat-add', [MiscellaneousCostCategoiesController::class, 'create'])->name('admin.miscat.create');
+    Route::get('miscost-cat-edit/{id}', [MiscellaneousCostCategoiesController::class, 'edit'])->name('admin.miscat.edit');
+    Route::get('miscost-cat-delete/{id}', [MiscellaneousCostCategoiesController::class, 'delete'])->name('admin.miscat.delete');
+    Route::post('miscost-cat-store', [MiscellaneousCostCategoiesController::class, 'store'])->name('admin.miscat.store');
+    Route::post('miscost-cat-update/{id}', [MiscellaneousCostCategoiesController::class, 'update'])->name('admin.miscat.update');
+
+    // MISCELLANEOUS COSTS ROUTE
+    Route::get('miscost-all-debit', [MiscellaneousCostController::class, 'indexDebit'])->name('admin.miscost.all.debit');
+    Route::get('miscost-all-owbm', [MiscellaneousCostController::class, 'indexOwbm'])->name('admin.miscost.all.owbm');
+    Route::get('miscost-all-bill', [MiscellaneousCostController::class, 'indexBill'])->name('admin.miscost.all.bill');
+    Route::get('miscost-all-debtpay', [MiscellaneousCostController::class, 'indexDebtpay'])->name('admin.miscost.all.debtpay');
+    Route::get('miscost-add/{id}', [MiscellaneousCostController::class, 'create'])->name('admin.miscost.create');
+    Route::post('miscost-store', [MiscellaneousCostController::class, 'store'])->name('admin.miscost.store');
+    Route::post('miscost-update/{id}', [MiscellaneousCostController::class, 'update'])->name('admin.miscost.update');
+    Route::get('miscost-edit/{id}/{cost_status}', [MiscellaneousCostController::class, 'edit'])->name('admin.miscost.edit');
+    Route::get('miscost-delete/{id}/{cost_status}', [MiscellaneousCostController::class, 'delete'])->name('admin.miscost.delete');
   }
 );
 

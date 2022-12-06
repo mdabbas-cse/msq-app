@@ -2,7 +2,8 @@
 @section('css')
     <style>
         @media only screen and (min-width: 800px) {
-            #donation_filter {
+            #salary_filter,
+            #salary_paginate {
                 float: right !important;
             }
         }
@@ -14,7 +15,7 @@
             @if ($create == 2)
                 DEBIT
             @elseif($create == 1)
-                সেলারি ক্যাটাগরি /Salary Category
+                সেলারি / Salary
             @endif
         </h1>
         <div>

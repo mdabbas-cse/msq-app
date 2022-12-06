@@ -2,7 +2,8 @@
 @section('css')
     <style>
         @media only screen and (min-width: 800px) {
-            #snhrent_filter {
+            #snhrent_filter,
+            #snhrent_paginate {
                 float: right !important;
             }
         }
