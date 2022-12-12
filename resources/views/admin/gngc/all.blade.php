@@ -2,7 +2,7 @@
 @section('css')
     <style>
         @media only screen and (min-width: 800px) {
-            #gngc_filter {
+            #gngc_filter, #gngc_paginate {
                 float: right !important;
             }
         }

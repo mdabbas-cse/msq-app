@@ -32,13 +32,12 @@ class ShopNHouseRentController extends Controller
   {
     // dd($request);
     $request->validate([
-      'nid' => 'required',
-      'month' => 'required',
-      'amount' => 'required',
-      'house_no' => 'required',
-      'mobile_no' => 'required',
-      'issue_date' => 'required',
-      'description' => 'required',
+      'nid' => 'required|numeric',
+      'month' => 'required|date',
+      'amount' => 'required|numeric',
+      'house_no' => 'required|numeric',
+      'mobile_no' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+      'issue_date' => 'required|date',
       'cost_status' => 'required',
       'rent_category' => 'required',
     ]);
@@ -73,6 +72,16 @@ class ShopNHouseRentController extends Controller
 
   public function update(Request $request, $id)
   {
+    $request->validate([
+      'nid' => 'required|numeric',
+      'month' => 'required|date',
+      'amount' => 'required|numeric',
+      'house_no' => 'required|numeric',
+      'mobile_no' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+      'issue_date' => 'required|date',
+      'cost_status' => 'required',
+      'rent_category' => 'required',
+    ]);
     $data = $request->all();
     $snhrent = ShopNHouseRent::find($id);
     $snhrent->update($data);

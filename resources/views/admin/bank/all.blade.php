@@ -1,17 +1,15 @@
 @extends('layouts.appLayout')
-
 @section('css')
     <style>
-        /* .container-fluid {
-                            background-color: red;
-                        } */
+        @media only screen and (min-width: 800px) {
+            #back-account_filter, #back-account_paginate {
+                float: right !important;
+            }
+        }
     </style>
 @endsection
-
 @section('content')
     <div class="d-flex justify-content-between">
-
-
         <h1 class="h5 mb-4 text-gray-800">Bank Account / ব্যাংক হিসাব</h1>
         <div>
             <a class="btn btn-primary" href="{{ route('admin.bank.create') }}">Add New / নতুন সংযুগ করুন</a>
@@ -20,7 +18,6 @@
 
     <div class="card">
         <div class="card-body">
-
             <table id="back-account" class="table table-bordered table-responsive-sm table-responsive-md">
                 <thead>
                     <tr>
@@ -62,7 +59,7 @@
     </div>
 @endsection
 
-@section('scr ipts')
+@section('scripts')
     @include('/layouts/dataTable')
 @endsection
 

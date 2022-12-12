@@ -9,6 +9,15 @@ class MiscellaneousCost extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+      'month',
+      'amount',
+      'issue_date',
+      'cost_status',
+      'description',
+      'miscellaneous_cost_category_id',
+    ];
+
     protected $appends = ['view_route', 'edit_route', 'delete_route'];
 
     public function setViewRouteAttribute()

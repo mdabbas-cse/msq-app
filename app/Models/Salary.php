@@ -9,6 +9,15 @@ class Salary extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+      'month',
+      'amount',
+      'issue_date',
+      'description',
+      'cost_status',
+      'salary_category_id',
+    ];
+
     protected $appends = ['view_route', 'edit_route', 'delete_route'];
 
     public function setViewRouteAttribute()

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class SalaryCategory extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+      'salary_category_name',
+    ];
+
 }

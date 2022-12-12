@@ -23,7 +23,7 @@ class GovmentNNonGovmentCollectionController extends Controller
   public function store(Request $request)
   {
     $request->validate([
-      'amount' => 'required',
+      'amount' => 'required|numeric',
       'cost_status' => 'required',
     ]);
     $data = [
@@ -46,6 +46,10 @@ class GovmentNNonGovmentCollectionController extends Controller
 
   public function update(Request $request, $id)
   {
+    $request->validate([
+      'amount' => 'required|numeric',
+      'cost_status' => 'required',
+    ]);
     $data = $request->all();
     $gngc = GovmentNNonGovmentCollection::find($id);
     $gngc->update($data);
